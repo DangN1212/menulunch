@@ -1,0 +1,29 @@
+.menu {
+    width: 600px;
+    margin: 0 auto;
+    padding: 50px;
+    box-sizing: border-box;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.form {
+    &_select {
+        padding: 20px;
+        p {
+            padding-left: 100px;
+            margin-bottom: 20px;
+        }
+    }
+    &_add {
+        padding: 20px;
+        input[type=text]:not(.browser-default) {
+            width: 500px;
+        }
+        &_row {
+            padding: 10px 0
+        }
+    }
+}

@@ -1,0 +1,29 @@
+{
+  "name": "menulunch",
+  "version": "1.0.0",
+  "description": "this project for insert, create menu for everyone, and check the food people ordered",
+  "main": "index.js",
+  "scripts": {
+    "test": "Hi, just for fun :)"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DangN1212/menulunch.git"
+  },
+  "keywords": [
+    "html",
+    "css"
+  ],
+  "author": "DAN",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DangN1212/menulunch/issues"
+  },
+  "homepage": "https://github.com/DangN1212/menulunch#readme",
+  "devDependencies": {
+    "browser-sync": "^2.18.13",
+    "grunt-contrib-less": "^1.4.1",
+    "gulp": "^3.9.1",
+    "gulp-sass": "^3.1.0"
+  }
+}

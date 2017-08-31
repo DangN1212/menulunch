@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Admin page</title>
+    <!-- Compiled and minified CSS -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+</head>
+
+<body ng-app="menuapp" ng-controller="menuController">
+    <div id="wrapper" class="container">
+        <div class="row">
+            <h5 class="center-align">Admin page</h5>
+            <div class="col s12">
+                <ul class="tabs">
+                    <li class="tab col s6"><a href="#test1">Thêm món</a></li>
+                    <li class="tab col s6"><a href="#test2">Liệt kê</a></li>
+                </ul>
+            </div>
+            <div id="test1" class="col s12">
+                <form action="#" class="form_add">
+                    <p ng-repeat="item in menu" class="form_add_row horizontal">
+                        <input class="filled-in" id="food_0{{item.id}}" type="checkbox" value="{{item.name}}" />
+                        <label for="food_0{{item.id}}" ng-bind="item.name"></label>
+                        <a class="btn-floating right btn-small waves-effect waves-light red" ng-click="removeFood(item.name);"><i class="material-icons">delete_forever</i></a>
+                    </p>
+                    <div class="input-field col s12">
+                        <input id="name" type="text" ng-model="food_name">
+                        <label for="name">Name</label>
+                        <a href="#" class="waves-effect waves-light btn center-align" ng-click="addFood(); food_name = null">More</a>
+                    </div>
+                    <p class="center-align">
+                        <a class="waves-effect waves-light btn center-align" href="#">Ok!</a>
+                    </p>
+                </form>
+            </div>
+            <div id="test2" class="col s12">Test 2</div>
+        </div>
+    </div>
+    <!-- Compiled and minified JavaScript -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.3.0/firebase.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angularFire/2.3.0/angularfire.min.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyBWayB3xNc1BDCO30bEbtAi_kSfAXaIi4w",
+            authDomain: "menu-7f7a6.firebaseapp.com",
+            databaseURL: "https://menu-7f7a6.firebaseio.com",
+            projectId: "menu-7f7a6",
+            storageBucket: "",
+            messagingSenderId: "796315540639"
+        };
+        firebase.initializeApp(config);
+    </script>
+    <script src="fileapp.js"></script>
+    <script>
+        function foodObj(test) {
+            this.vablue = test;
+        }
+    </script>
+</body>
+
+
+</html>
