@@ -6,6 +6,8 @@ app.config(['$compileProvider', function($compileProvider) {
 
 app.controller('menuController', function($scope, $firebaseObject, $firebaseArray) {
     let db = firebase.database(),
+        idFood = $('#name'),
+        inputFood = $('.input_food'),
         index;
     $scope.show_loading = true;
     $scope.menu = $firebaseArray(db.ref('menu/'));
@@ -13,13 +15,17 @@ app.controller('menuController', function($scope, $firebaseObject, $firebaseArra
     $scope.addFood = function() {
         $scope.menu.$add({
             name: $scope.food_name,
-            id: $scope.menu.length,
+            count: '0',
+            check: 'false'
+        }).then(function() {
+            inputFood.val('');
         });
     };
     $scope.removeFood = function(index) {
-        console.log(index);
-        let item = $scope.menu[index] + 1;
-        $scope.menu.$remove(item);
+        $scope.menu.$remove($scope.menu.$getRecord(index));
+    };
+    $scope.addMenu = function() {
+
     };
 
 });
